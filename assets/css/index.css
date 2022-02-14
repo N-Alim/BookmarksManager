@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    gap: 20%;
+    margin: 10px 0;
+}
