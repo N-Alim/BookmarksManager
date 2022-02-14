@@ -11,9 +11,9 @@
         "default_popup": "index.html",
         "default_icon": 
         {
-            "16": "img/fav-16.ico",
-            "32": "img/fav-32.ico",
-            "48": "img/fav-48.ico"
+            "16": "assets/img/fav-16.ico",
+            "32": "assets/img/fav-32.ico",
+            "48": "assets/img/fav-48.ico"
         }
     },
     "manifest_version": 2
