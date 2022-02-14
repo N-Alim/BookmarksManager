@@ -1,0 +1,20 @@
+{
+
+    "author": "Alim NOUIRA",
+    "homepage_url": "https://github.com/N-Alim",
+    "name": "Bookmarks Manager",
+    "version": "1.0",
+    "description": "Manage your bookmarks with tags",
+    "permissions": ["activeTab"],
+    "browser_action": 
+    {
+        "default_popup": "index.html",
+        "default_icon": 
+        {
+            "16": "img/fav-16.ico",
+            "32": "img/fav-32.ico",
+            "48": "img/fav-48.ico"
+        }
+    },
+    "manifest_version": 2
+}
