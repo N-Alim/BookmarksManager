@@ -5,25 +5,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="assets/css/index.css">
-
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <script src="./assets/js/tags.js"></script>
+        <script src="./assets/js/bookmarks.js"></script>
+        <script src="./assets/js/index.js" defer></script>
     </head>
     <body>
         <h1>Bookmarks Manager</h1>
-        <form method="post" action="form.php">
-            <ul>
-                <li><label for="name"> Name </label>
-                    <input type="texte" id="name" name="name" value=""></li>
+        <ul>
+            <li><label for="name"> Name </label>
+                <input type="texte" id="name" name="name" value=""></li>
 
-                <li><label for="folders"> Folders </label>
-                    <select range="folders" id="folders" name="folders">
-                    <?php echo getFolders();?>
-                    </select>
-                </li>
-                <li><input type="reset" value="Effacer">
-                    <input type="submit" value="Valider" name="validation"></li>
-            </ul>
-        </form>
-        
+            <li><label for="tags"> Tags </label>
+                <select range="tags" id="tags" name="tags">
+                </select>
+            </li>
+            <li><a href="./manager.html">Manager</a>
+                <button>Remove</button>
+                <button accesskey="a" class="confirm">Add</button>
+        </ul>
+
+        <div class="tagsMain">
+        </div>
     </body>
 </html>
