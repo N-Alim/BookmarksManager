@@ -47,7 +47,18 @@ function addTag()
     tag.className = "tag";
     tag.innerText = Object.keys(tags[tagValue])[0];
 
+    tag.appendChild(createCross());
 
+    tagsContainer.appendChild(tag);
+}
+
+function removeTag()
+{
+    
+}
+
+function createCross()
+{
     const crossButton = document.createElement("div");
     crossButton.className = "cross-button";
     crossButton.addEventListener("click", removeTag())
@@ -61,12 +72,5 @@ function addTag()
     crossButton.appendChild(crossTop);
     crossButton.appendChild(crossBottom);
 
-    tag.appendChild(crossButton);
-
-    tagsContainer.appendChild(tag);
-}
-
-function removeTag()
-{
-    
+    return crossButton;
 }
