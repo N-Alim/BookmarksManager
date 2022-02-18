@@ -39,12 +39,34 @@ function addTag()
 
     const tagsContainer = document.querySelector("div.tagsMain");
 
+    document.querySelector('select#tags').removeChild(document.querySelector("option[value='" + tagValue + "']"));
+
     const tags = JSON.parse(localStorage.getItem("tags"));
 
     const tag = document.createElement("div");
     tag.className = "tag";
     tag.innerText = Object.keys(tags[tagValue])[0];
 
-    tagsContainer.appendChild(tag);
 
+    const crossButton = document.createElement("div");
+    crossButton.className = "cross-button";
+    crossButton.addEventListener("click", removeTag())
+    
+    const crossTop = document.createElement("div");
+    crossTop.className = "cross-top";    
+    
+    const crossBottom = document.createElement("div");
+    crossBottom.className = "cross-bottom";
+    
+    crossButton.appendChild(crossTop);
+    crossButton.appendChild(crossBottom);
+
+    tag.appendChild(crossButton);
+
+    tagsContainer.appendChild(tag);
+}
+
+function removeTag()
+{
+    
 }
