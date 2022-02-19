@@ -6,7 +6,7 @@ function addBookmark()
     {
         title:document.querySelector("input#name").value,
         url: url,        
-        tags: selectedTags
+        tags: selectedTags.values
     };
 
     bookmarks.push(bookmark);
