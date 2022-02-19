@@ -39,7 +39,7 @@ function addTag(select)
 {
     const selectedOption = document.querySelector("option[value='" + select.value + "']");
     
-    selectedTags.push([selectedOption.value, selectedOption.innerText]);
+    selectedTags.push([parseInt(selectedOption.value), selectedOption.innerText]);
 
     const tagsContainer = document.querySelector("div.tagsMain");
 
