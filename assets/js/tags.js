@@ -16,23 +16,55 @@ function getTagsAsButtons()
         })
 
         tagsContainer.appendChild(tag);  
-   }
+    }
 }
 
 function getTagsAsOptions()
 {
-    let tagsSelect = document.querySelector("select#tags");
+    const tagsSelect = document.querySelector("select#tags");
     const tagsList = JSON.parse(localStorage.getItem("tagsList"));
 
-    // unselectedTags = tagsList.filter(function(selectedTags) { return selectedTags.includes(Object.keys(tagsList[tagId])[0]) })
+    const filledTagsSelect = createTagsSelect();
 
     for (const [key, value] of Object.entries(tagsList)) 
     {
-        const option = document.createElement("option");
-        option.value =  value.id;
-        option.innerText = key;
-        tagsSelect.appendChild(option);
+        if (!isTagSelected(key))
+        {
+            const option = document.createElement("option");
+            option.value =  value.id;
+            option.innerText = key;
+            filledTagsSelect.appendChild(option);
+        }
     }
+
+    tagsSelect.replaceWith(filledTagsSelect);
+}
+
+function createTagsSelect()
+{
+    const filledTagsSelect = document.createElement("select");
+    filledTagsSelect.range="tags";
+    filledTagsSelect.id="tags";
+    filledTagsSelect.name="tags";
+
+    filledTagsSelect.addEventListener("change", function(){addTag(this)});
+    filledTagsSelect.addEventListener("focus", () =>
+    {
+        document.querySelector("select#tags").value=-1;
+        document.querySelector("select#tags").blur();
+    });
+
+    return filledTagsSelect;
+}
+
+function isTagSelected(tagName)
+{
+    for (const [, selectedTagName] of selectedTags)
+    {
+        if (selectedTagName === tagName)
+            return true;
+    }
+    return false;
 }
 
 function addTag(select)
@@ -54,16 +86,21 @@ function addTag(select)
     select.removeChild(document.querySelector("option[value='" + selectedOption.value + "']"));
 }
 
-function removeTag()
+function removeTag(cross)
 {
+    const tag = cross.parentElement;
 
+    tag.parentElement.removeChild(tag);
+    selectedTags = selectedTags.filter(function(element) { return element[1] !== tag.innerText });
+
+    getTagsAsOptions();
 }
 
 function createCross()
 {
     const crossButton = document.createElement("div");
     crossButton.className = "cross-button";
-    crossButton.addEventListener("click", function(){ removeTag(); });
+    crossButton.addEventListener("click", function(){ removeTag(this); });
     
     const crossTop = document.createElement("div");
     crossTop.className = "cross-top";    
