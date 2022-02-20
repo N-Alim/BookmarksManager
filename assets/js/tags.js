@@ -2,19 +2,29 @@ function getTagsAsButtons()
 {
     const tagsContainer = document.querySelector("aside.tagsMain");
 
-    const tagsList = JSON.parse(localStorage.getItem("tagsList"));
-
-    for (const key of Object.keys(tagsList)) 
+    let tagsList = Object.entries(JSON.parse(localStorage.getItem("tagsList")));
+    tagsList = tagsList.sort(function(first, second) 
+    { 
+        if (first[0] < second[0]) 
+            return -1;
+        
+        if (first[0] > second[0]) 
+            return 1;
+        
+        return 0;
+    });
+    
+    for (const [key, ] of tagsList) 
     {
         const tag = document.createElement("div");
         tag.className = "tag";
         tag.innerText = key;
 
-        tag.addEventListener("click", () => 
+        tag.addEventListener("click", (event) => 
         {
-            this.classList.toggle("selected");
+            event.target.classList.toggle("selected");
         })
-
+        console.log(tag);
         tagsContainer.appendChild(tag);  
     }
 }
@@ -22,11 +32,21 @@ function getTagsAsButtons()
 function getTagsAsOptions()
 {
     const tagsSelect = document.querySelector("select#tags");
-    const tagsList = JSON.parse(localStorage.getItem("tagsList"));
+    let tagsList = Object.entries(JSON.parse(localStorage.getItem("tagsList")));
+    tagsList = tagsList.sort(function(first, second) 
+    { 
+        if (first[0] < second[0]) 
+            return -1;
+        
+        if (first[0] > second[0]) 
+            return 1;
+        
+        return 0;
+    });
 
     const filledTagsSelect = createTagsSelect();
 
-    for (const [key, value] of Object.entries(tagsList)) 
+    for (const [key, value] of tagsList) 
     {
         if (!isTagSelected(key))
         {
@@ -48,10 +68,10 @@ function createTagsSelect()
     filledTagsSelect.name="tags";
 
     filledTagsSelect.addEventListener("change", function(){addTag(this)});
-    filledTagsSelect.addEventListener("focus", () =>
+    filledTagsSelect.addEventListener("focus", (event) =>
     {
-        document.querySelector("select#tags").value=-1;
-        document.querySelector("select#tags").blur();
+        event.target.value=-1;
+        event.target.blur();
     });
 
     return filledTagsSelect;
