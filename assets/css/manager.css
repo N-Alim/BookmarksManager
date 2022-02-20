@@ -8,12 +8,29 @@ body {
     background-color: #111;
     color: #ffffff;
     padding: 20px;
-    width: 300px;
+    width: 100vw;
     height: 200px;
+    display: flex;
 }
 
+main {
+    width: 60%;
+}
 
-aside.tagsMain {
+div.bookmarkCard {
+    margin-bottom: 15px;
+    border: 1px solid white;
+    padding: 1.5%;
+    border-radius: 8px;
+}
+
+.bookmarkLink {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tagsMain {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
