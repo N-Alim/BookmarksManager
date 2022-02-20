@@ -24,5 +24,8 @@ function getSelectedTagsID()
         tagsID.push(tagID);
     }
 
+    if (tagsID.length === 0)
+        tagsID.push(0);
+
     return tagsID;
 }
