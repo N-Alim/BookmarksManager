@@ -1,1 +1,2 @@
+getBookmarks();
 getTagsAsButtons();
