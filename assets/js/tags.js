@@ -3,16 +3,7 @@ function getTagsAsButtons()
     const tagsContainer = document.querySelector("aside.tagsMain");
 
     let tagsList = Object.entries(JSON.parse(localStorage.getItem("tagsList")));
-    tagsList = tagsList.sort(function(first, second) 
-    { 
-        if (first[0] < second[0]) 
-            return -1;
-        
-        if (first[0] > second[0]) 
-            return 1;
-        
-        return 0;
-    });
+    tagsList = tagsList.sort(sortTagsAlphabetically);
     
     for (const [key, ] of tagsList) 
     {
@@ -24,25 +15,27 @@ function getTagsAsButtons()
         {
             event.target.classList.toggle("selected");
         })
-        console.log(tag);
+
         tagsContainer.appendChild(tag);  
     }
+}
+
+function sortTagsAlphabetically(first, second)
+{ 
+    if (first[0] < second[0]) 
+        return -1;
+    
+    if (first[0] > second[0]) 
+        return 1;
+    
+    return 0;
 }
 
 function getTagsAsOptions()
 {
     const tagsSelect = document.querySelector("select#tags");
     let tagsList = Object.entries(JSON.parse(localStorage.getItem("tagsList")));
-    tagsList = tagsList.sort(function(first, second) 
-    { 
-        if (first[0] < second[0]) 
-            return -1;
-        
-        if (first[0] > second[0]) 
-            return 1;
-        
-        return 0;
-    });
+    tagsList = tagsList.sort(sortTagsAlphabetically);
 
     const filledTagsSelect = createTagsSelect();
 
