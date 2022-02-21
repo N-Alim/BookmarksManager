@@ -9,7 +9,6 @@ body {
     color: #ffffff;
     padding: 20px;
     width: 100vw;
-    height: 200px;
     display: flex;
 }
 
@@ -20,7 +19,7 @@ main {
 div.bookmarkCard {
     margin-bottom: 15px;
     border: 1px solid white;
-    padding: 1.5%;
+    padding: 1%;
     border-radius: 8px;
 }
 
@@ -34,8 +33,11 @@ div.bookmarkCard {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    align-items: center;
     user-select: none;
+}
+
+div.tagsMain {
+    align-items: center;
 }
 
 div.tag {
@@ -49,4 +51,17 @@ div.tag.selected {
     background-color: #dedede;
     padding: 4px 8px 4px 8px;
     font-size: 120%;
+}
+
+div.tag span {
+    margin-left: 10px;
+    color: white;
+    background-color: #000;
+    padding: 1px 5px;
+    border-radius: 50%;
+}
+
+aside {
+    width: 40%;
+    align-items: flex-start;
 }
