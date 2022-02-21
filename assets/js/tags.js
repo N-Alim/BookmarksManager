@@ -5,11 +5,16 @@ function getTagsAsButtons()
     let tagsList = Object.entries(JSON.parse(localStorage.getItem("tagsList")));
     tagsList = tagsList.sort(sortTagsAlphabetically);
     
-    for (const [key, ] of tagsList) 
+    for (const [key, value] of tagsList) 
     {
         const tag = document.createElement("div");
         tag.className = "tag";
         tag.innerText = key;
+
+        const tagCount = document.createElement("span");
+        tagCount.innerText = value.useCount;
+
+        tag.appendChild(tagCount);
 
         tag.addEventListener("click", (event) => 
         {
