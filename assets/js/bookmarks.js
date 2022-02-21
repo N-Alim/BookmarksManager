@@ -10,6 +10,7 @@ function addBookmark()
 
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 
+    incrementTagsCount();
 }
 
 function getSelectedTagsID()
@@ -25,6 +26,19 @@ function getSelectedTagsID()
         tagsID.push(0);
 
     return tagsID;
+}
+
+function incrementTagsCount()
+{
+    const tagsList = JSON.parse(localStorage.getItem("tagsList"));
+
+    for ([, tagName] of selectedTags)
+    {
+        tagsList[tagName].useCount++;
+    }
+
+    localStorage.setItem("tagsList", JSON.stringify(tagsList));
+
 }
 
 function getBookmarks()
