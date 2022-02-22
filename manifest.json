@@ -3,7 +3,7 @@
     "author": "Alim NOUIRA",
     "homepage_url": "https://github.com/N-Alim/BookmarksManager.git",
     "name": "Bookmarks Manager",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Manage your bookmarks with tags",
     "permissions": 
     [
