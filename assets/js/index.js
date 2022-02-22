@@ -1,3 +1,5 @@
+checkVersionChanges()
+
 let url;
 let selectedTags = [];
 
