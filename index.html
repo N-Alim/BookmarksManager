@@ -13,18 +13,20 @@
     </head>
     <body>
         <h1>Bookmarks Manager</h1>
-        <ul>
-            <li><label for="name"> Name </label>
-                <input type="texte" id="name" name="name" value=""></li>
+        <main>
 
-            <li><label for="tags"> Tags </label>
+
+            <label for="name" class="name"> Name </label>
+                <input type="texte" id="name" name="name" value="">
+
+            <label for="tags" classe="tags"> Tags </label>
                 <select range="tags" id="tags" name="tags">
                 </select>
-            </li>
-            <li><a href="./manager.html" target="_blank">Manager</a>
-                <button>Remove</button>
-                <button accesskey="a" class="confirm">Add</button>
-        </ul>
+            
+            <a href="./manager.html" target="_blank" class="manager">Manager</a>
+            <button class="remove">Remove</button>
+            <button accesskey="a" class="confirm">Add</button>
+        </main>
 
         <div class="tagsMain">
         </div>
