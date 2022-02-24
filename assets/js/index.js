@@ -1,4 +1,4 @@
-checkVersionChanges()
+checkVersionChanges();
 
 let url;
 let selectedTags = [];
