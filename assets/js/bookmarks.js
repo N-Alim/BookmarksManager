@@ -23,7 +23,10 @@ function getSelectedTagsID()
     }
 
     if (tagsID.length === 0)
+    {
         tagsID.push(0);
+        selectedTags.push([0, "Undefined"])
+    }
 
     return tagsID;
 }
