@@ -17,7 +17,7 @@ function checkVersionChanges()
 
 function getVersion() 
 {
-    return chrome.app.getDetails().version;
+    return chrome.runtime.getManifest().version;
 }
 
 function onInstall() 
