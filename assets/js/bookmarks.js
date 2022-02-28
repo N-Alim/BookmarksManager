@@ -1,4 +1,4 @@
-function addBookmark()
+function createBookmark()
 {
     const bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 

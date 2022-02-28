@@ -3,7 +3,7 @@ checkVersionChanges();
 let url;
 let selectedTags = [];
 
-document.querySelector("button.confirm").addEventListener("click", addBookmark);
+document.querySelector("button.confirm").addEventListener("click", createBookmark);
 
 chrome.tabs.query({currentWindow: true, active: true}, function(tabs)
 {
