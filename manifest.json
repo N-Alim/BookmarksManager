@@ -8,6 +8,7 @@
     "permissions": 
     [
         "activeTab",
+        "tabs",
         "storage",
         "unlimitedStorage"
     ],
@@ -20,6 +21,10 @@
             "32": "assets/img/fav-32.png",
             "48": "assets/img/fav-48.png"
         }
+    },
+    "background": 
+    {
+        "service_worker": "assets/js/background.js"
     },
     "manifest_version": 3
 }
