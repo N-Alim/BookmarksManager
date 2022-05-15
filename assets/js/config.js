@@ -1,18 +1,20 @@
 function checkVersionChanges()
 {
-    const currVersion = getVersion();
-    const prevVersion = localStorage['version']
-
-    if (currVersion != prevVersion) 
+    chrome.storage.local.get("version", (data) => 
     {
-        if (typeof prevVersion == 'undefined') 
-            onInstall();
+        const currVersion = getVersion();
+    
+        if (currVersion != data.version) 
+        {
+            if (typeof data.version == 'undefined') 
+                onInstall();
+    
+            // else 
+            //     onUpdate();
+            chrome.storage.local.set({"version" : currVersion});
+        }
+    })
 
-        // else 
-        //     onUpdate();
-
-        localStorage['version'] = currVersion;
-    }
 }
 
 function getVersion() 
@@ -22,7 +24,7 @@ function getVersion()
 
 function onInstall() 
 {
-    localStorage["bookmarks"] = JSON.stringify({});
-    localStorage["tagsList"] = JSON.stringify({"Undefined": {id: 0, useCount: 0}});
-    localStorage["lastTagIDUsed"] = JSON.stringify(0);  
+    chrome.storage.local.set({"bookmarks" : {}, 
+        "tagsList" : {"Undefined": {id: 0, useCount: 0}}, 
+        "lastTagIdUsed" : 0});
 }
