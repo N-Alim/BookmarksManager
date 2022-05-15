@@ -5,8 +5,8 @@
 }
 
 body {
-    background-color: #111;
-    color: #ffffff;
+    background-color:cornflowerblue;
+    color: white;
     padding: 20px;
     width: 300px;
 }
@@ -14,17 +14,17 @@ body {
 h1 {
     font-size: 20px;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: .5fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "namelbl nameinput nameinput nameinput"
         "tagslbl tagsinput tagsinput tagsinput"
-        "managerbtn managerbtn removebtn addbtn";
+        ". managerlnk removebtn addbtn";
     padding: 3% 0 2% 0;
     row-gap: 10px;
     gap: 10px;
@@ -33,21 +33,22 @@ main {
 
 label.name {
     grid-area: namelbl;
+    font-size: 1.2em;
 }
 
 input#name {
     grid-area: nameinput;
     padding: 5px;
-    border: 1px solid red;
-    border-radius: 5px;
 }
 
 label.tags {
     grid-area: tagslbl;
+    font-size: 1.2em;
 }
 
 select#tags {
     grid-area: tagsinput;
+    padding: 5px;
     width: 100%;
 }
 
@@ -56,7 +57,11 @@ button {
 }
 
 a.manager {
-    grid-area: managerbtn;
+    grid-area: managerlnk;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
 button.remove {
@@ -67,9 +72,6 @@ button.confirm {
     grid-area: addbtn;
 }
 
-
-
-
 div.tagsMain {
     display: flex;
     flex-wrap: wrap;
@@ -79,14 +81,15 @@ div.tagsMain {
 }
 
 div.tag {
-    background-color: #888;
-    padding: 2px 7px 2px 7px;
-    margin: 1%;
+    background-color: rgb(182, 179, 179);
+    padding: 4px 8px;
+    margin: .5em;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
+    color: #000;
 }
 
 div.tag.selected {

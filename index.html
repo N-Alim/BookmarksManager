@@ -6,28 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./assets/css/index.css">
-        <script src="./assets/js/config.js"></script>
-        <script src="./assets/js/tags.js"></script>
-        <script src="./assets/js/bookmarks.js"></script>
+        <script src="./assets/js/config.js" defer></script>
+        <script src="./assets/js/utilities.js" defer></script>
         <script src="./assets/js/index.js" defer></script>
+        <script src="./assets/js/index-init.js" defer></script>
     </head>
     <body>
         <h1>Bookmarks Manager</h1>
         <main>
-
-
             <label for="name" class="name"> Name </label>
-                <input type="texte" id="name" name="name" value="">
+            <input type="texte" id="name" name="name" value="">
 
             <label for="tags" classe="tags"> Tags </label>
-                <select range="tags" id="tags" name="tags">
-                </select>
+            <select range="tags" id="tags" name="tags"></select>
             
             <a href="./manager.html" target="_blank" class="manager">Manager</a>
             <button class="remove">Remove</button>
-            <button accesskey="a" class="confirm">Add</button>
+            <button class="confirm">Edit</button>
         </main>
-
         <div class="tagsMain">
         </div>
     </body>
