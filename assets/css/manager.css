@@ -5,26 +5,38 @@
 }
 
 body {
-    background-color: #111;
-    color: #ffffff;
+    background-color: white;
+    color: black;
     padding: 20px;
     width: 100vw;
-    display: flex;
 }
 
 main {
+    display: flex;
+    gap: 3em;
+    padding: 2em;
+}
+
+div.bookmarksMain {
     width: 60%;
+}
+
+h1 {
+    text-align: center;
+    margin: 2em 0;
+    font-size: 3em;
 }
 
 div.bookmarkCard {
     margin-bottom: 15px;
-    border: 1px solid white;
-    padding: 1%;
+    color: white;
+    padding: 6px 12px;
     border-radius: 8px;
+    background-color: cornflowerblue;
 }
 
 .bookmarkLink {
-    color: white;
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
@@ -36,24 +48,24 @@ div.bookmarkCard {
     user-select: none;
 }
 
-div.tagsMain {
-    align-items: center;
-}
-
 div.tag {
-    background-color: #888;
-    padding: 2px 7px 2px 7px;
+    background-color: rgb(182, 179, 179);
+    padding: 2px 7px;
     margin: 1%; 
     border-radius: 8px;
+    display: flex;
+    font-size: 1.25em;
+    color: #000;
 }
 
 div.tag.selected {
-    background-color: #dedede;
-    padding: 4px 8px 4px 8px;
-    font-size: 120%;
+    background-color: cornflowerblue;
+    color: white;
+    padding: 4px 8px;
+    font-size: 1.35em;
 }
 
-div.tag span {
+p.tagCount {
     margin-left: 10px;
     color: white;
     background-color: #000;
@@ -61,7 +73,34 @@ div.tag span {
     border-radius: 50%;
 }
 
-aside {
+div.tagsSection {
+    display: flex;
+    flex-direction: column;
     width: 40%;
+}
+
+div.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+input, button {
+    padding: 6px 12px;
+}
+
+button {
+    background-color:cornflowerblue;
+    color: white;
+    border: 2px solid cornflowerblue;
+    border-radius: 4px;
+}
+
+aside {
+    margin-top: 1em;
     align-items: flex-start;
+    border: 1px solid black;
+    border-radius: 20px;
+    min-height: 40vh;
+    padding: 1em;
 }
