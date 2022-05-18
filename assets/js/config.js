@@ -24,7 +24,9 @@ function getVersion()
 
 function onInstall() 
 {
-    chrome.storage.local.set({"bookmarks" : {}, 
+    chrome.storage.local.set(
+    {   "bookmarks" : {}, 
         "tagsList" : {"Undefined": {id: 0, useCount: 0}}, 
-        "lastTagIdUsed" : 0});
+        "lastTagIdUsed" : 0
+    });
 }
