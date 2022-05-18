@@ -129,6 +129,7 @@ function editBookmark()
             incrementTagsCount();   
         });
     })
+    window.close();
 }
 
 function getSelectedTagsID()
@@ -174,6 +175,7 @@ function deleteBookmark() /* WIP */
             chrome.action.setIcon({ path: "assets/img/fav-16.png" });
         });
     })
+    window.close();
 }
 
 function decrementTagsCount() /* WIP */
