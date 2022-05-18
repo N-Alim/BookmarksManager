@@ -16,7 +16,7 @@ chrome.storage.local.get("tagsList", (data) =>
         currentTab = tabs[0];
         document.querySelector("input#name").value = currentTab.title;
         url = currentTab.url;
-        favIconUrl = currentTab.favIconUrl; 
+        favIconUrl = ((currentTab.favIconUrl !== undefined) ? currentTab.favIconUrl : "assets/img/fav-128-full.png"); 
 
         getTagsAsOptions();
         createBookmark();
