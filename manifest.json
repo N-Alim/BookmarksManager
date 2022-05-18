@@ -22,6 +22,7 @@
             "48": "assets/img/fav-48.png"
         }
     },
+    "options_page": "options.html",
     "background": 
     {
         "service_worker": "assets/js/background.js"
