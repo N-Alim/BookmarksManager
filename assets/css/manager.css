@@ -7,14 +7,14 @@
 body {
     background-color: white;
     color: black;
-    padding: 20px;
     width: 100vw;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
     display: flex;
     gap: 3em;
-    padding: 2em;
+    padding: 4em;
 }
 
 div.bookmarksMain {
@@ -33,6 +33,18 @@ div.bookmarkCard {
     padding: 6px 12px;
     border-radius: 8px;
     background-color: cornflowerblue;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+div.bookmarkCard img {
+    width: 3em;
+    aspect-ratio: 1;
+}
+
+div.bookmarkCardText {
+    width: 100%;
 }
 
 .bookmarkLink {
@@ -94,6 +106,8 @@ button {
     color: white;
     border: 2px solid cornflowerblue;
     border-radius: 4px;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
 aside {
@@ -103,4 +117,8 @@ aside {
     border-radius: 20px;
     min-height: 40vh;
     padding: 1em;
+}
+
+aside div.tag{
+    cursor: pointer;
 }

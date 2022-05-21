@@ -16,13 +16,8 @@ function createTag()
         "lastTagIdUsed": lastTagIdUsed})
         .then(() =>
         {
-            chrome.storage.local.get("tagsList", (data) => 
-            {
-                tagsList = data.tagsList;
-
-                resetTags();
-                getTagsAsButtons();
-            });
+            resetTags();
+            getTagsAsButtons();
         });
 }
 
@@ -41,24 +36,22 @@ function getTagsAsButtons()
 
         tag.addEventListener("click", (event) => 
         {
-
             const index = selectedTags.indexOf(value.id);
             if (index > -1) 
             {
                 selectedTags.splice(index, 1);
-                filterAllBookmarksByTags()
+                filterAllBookmarksByTags();
                 getBookmarks(sortedBookmarks);                
             }
 
             else 
             {
                 selectedTags.push(value.id);
-                filterBookmarksByTag(value.id)
+                filterBookmarksByTag(value.id);
                 getBookmarks(sortedBookmarks);                
             }
             
             event.target.classList.toggle("selected");
-
         })
 
         tagsContainer.appendChild(tag);  
@@ -110,15 +103,22 @@ function createBookmarkCard([key, value])
     const bookmark = document.createElement("div");
     bookmark.className = "bookmarkCard";
 
-    // const cardIcon = document.createElement("img");
-    // cardIcon.src = value.favIconUrl;
+    const cardIcon = document.createElement("img");
+    cardIcon.src = value.favIconUrl;
+
+    const cardText = document.createElement("div");
+    cardText.className = "bookmarkCardText";
     
     const cardTitle = document.createElement("h2");
     cardTitle.innerText = value.title;
 
-    bookmark.appendChild(cardTitle);
+    cardText.appendChild(cardTitle);
 
-    bookmark.appendChild(getTags(value.tags));
+    cardText.appendChild(getTags(value.tags));
+
+    bookmark.appendChild(cardIcon);
+
+    bookmark.appendChild(cardText);
 
     const linkToBookmark = document.createElement("a");
     linkToBookmark.href = key;
