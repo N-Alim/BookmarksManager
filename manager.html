@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/manager.css">
     <script src="./assets/js/utilities.js" defer></script>
     <script src="./assets/js/manager.js" defer></script>
+    <script src="./assets/js/search.js" defer></script>
     <script src="./assets/js/manager-init.js" defer></script>
 </head>
 <body>
@@ -24,6 +25,30 @@
             </div>
             <aside class="tagsMain">
             </aside>
+
+            <input type="text" id="search">
+            <label for="caseSensitive">Case sensitive search</label>
+            <input type="checkbox" name="caseSensitive" id="caseSensitive">
+            <fieldset id="searchMode">
+                <legend>Select a search mode</legend>
+            
+                <div>
+                    <input type="radio" name="searchMode" id="urlRadio" value="0"
+                            checked>
+                    <label for="urlRadio">Url</label>
+                </div>
+            
+                <div>
+                    <input type="radio" name="searchMode" id="titleRadio" value="1">
+                    <label for="titleRadio">Title</label>
+                </div>
+            
+                <div>
+                    <input type="radio" name="searchMode" id="bothRadio" value="2">
+                    <label for="bothRadio">Both</label>
+                </div>
+            </fieldset>
+            
         </div>
     </main>
 
