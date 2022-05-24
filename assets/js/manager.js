@@ -110,7 +110,7 @@ function createBookmarkCard([key, value])
     cardText.className = "bookmarkCardText";
     
     const cardTitle = document.createElement("h2");
-    cardTitle.innerText = value.title;
+    cardTitle.innerText = ((value.title !== "") ? value.title : key);
 
     cardText.appendChild(cardTitle);
 
