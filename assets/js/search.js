@@ -14,16 +14,7 @@ function isStringInBookmark(bookmark)
     if (searchString === "")
         return true;
 
-    let searchArray = searchString.split(new RegExp(/\s+/));
-
-    if (searchArray[0] === "")
-    {
-        searchArray.splice(0, 1);
-    }
-
-    console.log(searchArray);
-
-    let regexString = searchArray.join(".*");
+    let regexString = searchString.replace(/\s+/g, ".*");
 
     console.log(regexString);
 
