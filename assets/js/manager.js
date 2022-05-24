@@ -1,6 +1,6 @@
 function createTag() 
 {
-    const name = document.querySelector("input.tagInput").value;
+    const name = document.querySelector("input.tagInput").value.trim();
 
     document.querySelector("input.tagInput").value = "";
 

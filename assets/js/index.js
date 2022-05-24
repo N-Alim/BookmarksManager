@@ -104,7 +104,7 @@ function createBookmark()
     {
         data.bookmarks[url] = 
         {
-            "title": document.querySelector("input#name").value,
+            "title": document.querySelector("input#name").value.trim(),
             "tags": [0],
             "favIconUrl" : favIconUrl
         };
@@ -121,7 +121,7 @@ function editBookmark()
 {
     chrome.storage.local.get("bookmarks", (data) => 
     {
-        data.bookmarks[url].title = document.querySelector("input#name").value;
+        data.bookmarks[url].title = document.querySelector("input#name").value.trim();
         data.bookmarks[url].tags =  getSelectedTagsID();
     
         chrome.storage.local.set({"bookmarks" : data.bookmarks}, () => 
