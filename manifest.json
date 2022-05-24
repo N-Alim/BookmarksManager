@@ -1,10 +1,16 @@
 {
-
+    "manifest_version": 3,
     "author": "Alim NOUIRA",
     "homepage_url": "https://github.com/N-Alim/BookmarksManager.git",
     "name": "Bookmarks Manager",
     "version": "1.0.0",
     "description": "Manage your bookmarks with tags",
+    "icons":
+    {
+        "16": "assets/img/fav-16-full.png",
+        "32": "assets/img/fav-32-full.png",
+        "48": "assets/img/fav-48-full.png"
+    },
     "permissions": 
     [
         "activeTab",
@@ -14,18 +20,15 @@
     ],
     "action": 
     {
-        "default_popup": "index.html",
-        "default_icon": 
-        {
-            "16": "assets/img/fav-16.png",
-            "32": "assets/img/fav-32.png",
-            "48": "assets/img/fav-48.png"
-        }
+        "default_popup": "index.html"
     },
-    "options_page": "options.html",
+    "options_ui": 
+    {
+        "page": "options.html",
+        "open_in_tab": true
+    },
     "background": 
     {
         "service_worker": "assets/js/background.js"
-    },
-    "manifest_version": 3
+    }
 }
