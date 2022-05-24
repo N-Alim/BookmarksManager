@@ -13,4 +13,4 @@ Extension pour gérer ses marques-pages avec des étiquettes
 
 2. Sélectionnez l'option "Charger l'extension non empaquetée" 
 
-3. Choisissez le dossier "Bookmarks Manager"
+3. Choisissez le dossier "BookmarksManager"
