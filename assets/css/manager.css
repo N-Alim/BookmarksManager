@@ -53,6 +53,26 @@ div.bookmarkCardText {
     cursor: pointer;
 }
 
+
+input#search {
+    margin: 2em 0 1em 0;
+}
+
+div.formGroup {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    margin-right: 2em;
+
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    gap: 2em;
+}
+
 .tagsMain {
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +114,9 @@ div.tagsSection {
 div.options {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1em;
+    
 }
 
 input, button {

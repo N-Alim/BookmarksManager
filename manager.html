@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmarks Manager</title>
     <link rel="stylesheet" href="assets/css/manager.css">
+    <link rel="stylesheet" href="./assets/css/cross.css">
     <script src="./assets/js/utilities.js" defer></script>
     <script src="./assets/js/manager.js" defer></script>
     <script src="./assets/js/search.js" defer></script>
@@ -18,37 +19,40 @@
         <div class="bookmarksMain"></div>
         <div class="tagsSection">
             <div class="options">
-                <div>
-                    <input class="tagInput" type="text">
-                    <button class="addButton">Add tag</button> 
+                <input class="tagInput" type="text">
+                <button class="addButton">Add tag</button> 
+            </div>
+            <input type="text" id="search">
+
+            <div class="searchOptions">
+                <div class="formGroup">
+                    <input type="checkbox" name="caseSensitive" id="caseSensitive">
+                    <label for="caseSensitive">Case sensitive search</label>                
                 </div>
+
+                <fieldset id="searchMode">
+                    <legend>Select a search mode</legend>
+                
+                    <div class="formGroup">
+                        <input type="radio" name="searchMode" id="urlRadio" value="0"
+                                checked>           
+                        <label for="urlRadio">Url</label>
+                    </div>
+                
+                    <div class="formGroup">
+                        <input type="radio" name="searchMode" id="titleRadio" value="1">
+                        <label for="titleRadio">Title</label>
+                    </div>
+                
+                    <div class="formGroup">
+                        <input type="radio" name="searchMode" id="bothRadio" value="2">
+                        <label for="bothRadio">Both</label>
+                    </div>
+                </fieldset>                
             </div>
             <aside class="tagsMain">
             </aside>
-
-            <input type="text" id="search">
-            <label for="caseSensitive">Case sensitive search</label>
-            <input type="checkbox" name="caseSensitive" id="caseSensitive">
-            <fieldset id="searchMode">
-                <legend>Select a search mode</legend>
-            
-                <div>
-                    <input type="radio" name="searchMode" id="urlRadio" value="0"
-                            checked>
-                    <label for="urlRadio">Url</label>
-                </div>
-            
-                <div>
-                    <input type="radio" name="searchMode" id="titleRadio" value="1">
-                    <label for="titleRadio">Title</label>
-                </div>
-            
-                <div>
-                    <input type="radio" name="searchMode" id="bothRadio" value="2">
-                    <label for="bothRadio">Both</label>
-                </div>
-            </fieldset>
-            
+         
         </div>
     </main>
 
