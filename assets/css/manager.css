@@ -53,16 +53,19 @@ div.bookmarkCardText {
     cursor: pointer;
 }
 
-
 input#search {
     margin: 2em 0 1em 0;
+}
+
+div.searchOptions {
+    padding: 0 2em;
 }
 
 div.formGroup {
     display: flex;
     align-items: center;
     gap: 1em;
-    padding: 1em 0;
+    padding: 1em 0 2em 0;
     margin-right: 2em;
 
 }
