@@ -33,14 +33,14 @@ function getTagsAsButtons()
         const tag = document.createElement("div");
         tag.className = "tag";
         tag.innerText = key;
-
+        
         tag.addEventListener("click", (event) => 
         {
             const index = selectedTags.indexOf(value.id);
             if (index > -1) 
             {
                 selectedTags.splice(index, 1);
-                filterAllBookmarksByTags();
+                filterAllBookmarksByTagsAndSearch();
                 getBookmarks(sortedBookmarks);                
             }
 
@@ -159,43 +159,6 @@ function replaceTagsIDByName(tagsID)
     }
 
     return tagsNameList;
-}
-
-function filterBookmarksByTag(tagID)
-{
-    let filteredBookmarks = {};
-
-    for ([url, data] of Object.entries(sortedBookmarks))
-        if (data.tags.includes(tagID))
-            filteredBookmarks[url] = data;   
-            
-    sortedBookmarks = filteredBookmarks;
-}
-
-function filterAllBookmarksByTags()
-{
-    let filteredBookmarks = {};
-    let containsAllSelectedTags;
-
-    for ([url, data] of Object.entries(bookmarks))
-    {
-        containsAllSelectedTags = true;
-        for (tagID of selectedTags)
-        {
-            if (!data.tags.includes(tagID))    
-            {
-                containsAllSelectedTags = false;
-                break;
-            }
-        }
-
-        if (containsAllSelectedTags)
-        {
-            filteredBookmarks[url] = data;
-        }
-    }
-    
-    sortedBookmarks = filteredBookmarks;
 }
 
 function resetTags() 

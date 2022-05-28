@@ -9,17 +9,19 @@ let searchMode = 0;
 
 document.querySelector("input#search").addEventListener("input", (event) => 
 {
-    if (searchString.length < event.target.value.length) 
+    let newSearchString = event.target.value.trim();
+
+    if (searchString.length < newSearchString.length) 
     {
-        searchString = event.target.value;
-        filterBookmarksBySearch(false);
+        searchString = newSearchString;
+        filterBookmarksBySearch(sortedBookmarks);
         getBookmarks(sortedBookmarks);                
     }
 
     else 
     {
-        searchString = event.target.value;
-        filterBookmarksBySearch();
+        searchString = newSearchString;
+        filterAllBookmarksByTagsAndSearch();
         getBookmarks(sortedBookmarks);                
     }
 })
@@ -27,18 +29,25 @@ document.querySelector("input#search").addEventListener("input", (event) =>
 document.querySelector("input#caseSensitive").addEventListener("change", (event) => 
 {
     caseSensitive = event.target.checked;
-    filterBookmarksBySearch();
+    filterAllBookmarksByTagsAndSearch();
     getBookmarks(sortedBookmarks);                
 })
 
 document.querySelector("fieldSet#searchMode").addEventListener("change", (event) => 
 {
     searchMode = parseInt(event.target.value);
-    filterBookmarksBySearch();
+    filterAllBookmarksByTagsAndSearch();
     getBookmarks(sortedBookmarks);                
 })
 
 document.querySelector("button.addButton").addEventListener("click", createTag);
+document.querySelector("input#import").addEventListener("change", (event) => 
+{
+    fileReader = new FileReader();
+    fileReader.onload = function(event) { console.log(fileReader.result);   /* loadBookmarksFromJSON */};
+    fileReader.readAsText(event.target.files[0]);
+});
+document.querySelector("button#export").addEventListener("click", downloadBookmarksAsJSON);
 
 chrome.storage.local.get(["bookmarks", "tagsList", "lastTagIdUsed"], (data) => 
 {
@@ -50,5 +59,3 @@ chrome.storage.local.get(["bookmarks", "tagsList", "lastTagIdUsed"], (data) =>
     getBookmarks(bookmarks);
     getTagsAsButtons();
 });
-
-
