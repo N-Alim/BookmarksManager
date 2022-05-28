@@ -9,21 +9,28 @@ let searchMode = 0;
 
 document.querySelector("input#search").addEventListener("input", (event) => 
 {
-    let newSearchString = event.target.value.trim();
+    let newSearchString = event.target.value.trim().replace(/\s+/g, ".*");;
 
-    if (searchString.length < newSearchString.length) 
+    if (newSearchString === "")
+    {
+        searchString = newSearchString;
+        filterAllBookmarksByTags();
+    }
+
+    else if (searchString.length < newSearchString.length) 
     {
         searchString = newSearchString;
         filterBookmarksBySearch(sortedBookmarks);
-        getBookmarks(sortedBookmarks);                
     }
 
     else 
     {
         searchString = newSearchString;
         filterAllBookmarksByTagsAndSearch();
-        getBookmarks(sortedBookmarks);                
-    }
+    }      
+
+    getBookmarks(sortedBookmarks);                
+
 })
 
 document.querySelector("input#caseSensitive").addEventListener("change", (event) => 

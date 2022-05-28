@@ -48,20 +48,7 @@ function filterBookmarksBySearch(bookmarks)
 
 function isStringInBookmark(bookmark)
 {
-    // WIP 1 - start
-    if (searchString === "")
-        return true;
-    // WIP 1 - end
-
-    let regexString = searchString.replace(/\s+/g, ".*");
-
-    console.log(regexString);
-
-    console.log(bookmark[1].title);
-    
-    const regExp = ((caseSensitive) ? new RegExp(regexString) : new RegExp(regexString, "i"))
-
-    console.log(regExp.test(bookmark[1].title));
+    const regExp = ((caseSensitive) ? new RegExp(searchString) : new RegExp(searchString, "i"))
 
 
     switch (searchMode) {

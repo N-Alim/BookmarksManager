@@ -41,16 +41,16 @@ function getTagsAsButtons()
             {
                 selectedTags.splice(index, 1);
                 filterAllBookmarksByTagsAndSearch();
-                getBookmarks(sortedBookmarks);                
             }
 
             else 
             {
                 selectedTags.push(value.id);
                 filterBookmarksByTag(value.id);
-                getBookmarks(sortedBookmarks);                
             }
-            
+
+            getBookmarks(sortedBookmarks);                
+
             event.target.classList.toggle("selected");
         })
 
