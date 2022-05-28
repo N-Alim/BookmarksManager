@@ -85,7 +85,7 @@ fieldset {
 
 div.tag {
     background-color: rgb(182, 179, 179);
-    padding: 2px 7px;
+    padding: 4px 8px;
     margin: 1%; 
     border-radius: 8px;
     display: flex;
@@ -96,8 +96,6 @@ div.tag {
 div.tag.selected {
     background-color: cornflowerblue;
     color: white;
-    padding: 4px 8px;
-    font-size: 1.35em;
 }
 
 p.tagCount {
